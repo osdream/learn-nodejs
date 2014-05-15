@@ -153,6 +153,8 @@ mysql.query('SELECT * FROM ...', function(err, result) {
 
 * 计算密集型程序
 
+***
+
 ## 实践
 
 优化一下前面的 Hello World 程序，需求：
@@ -433,6 +435,8 @@ Node.js提供了不少常用的模块，这些模块可以称为内部模块或�
 
 ![package count](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/package_count.png)
 
+***
+
 ## Node.js调试方法
 
 开发程序必不可少的就是调试功能，Node.js 提供了多种调试方式。
@@ -510,6 +514,8 @@ supervisor web.js
 ### 其他调试方式
 
 * Eclipse插件
+
+***
 
 ## 开发网站
 
