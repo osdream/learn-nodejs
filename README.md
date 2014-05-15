@@ -4,11 +4,11 @@ Node.js简介
 ## Node.js 安装
 
 * 下载地址
-	* [http://nodejs.org/download/]
+    * [http://nodejs.org/download/]
 * 安装
-	* 上面下载地址里提供了二进制安装包、源码包，可下载安装
-	* 如果你是熊掌公司的，Linux 下还可以使用 [jumbo](http://jumbo.ws/) 安装 (`jumbo install nodejs`)
-	* 另外Linux各种操作系统都提供了包安装源，可通过 `apt-get/yum/rpm` 等方式安装，可参考 [https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager]
+    * 上面下载地址里提供了二进制安装包、源码包，可下载安装
+    * 如果你是熊掌公司的，Linux 下还可以使用 [jumbo](http://jumbo.ws/) 安装 (`jumbo install nodejs`)
+    * 另外Linux各种操作系统都提供了包安装源，可通过 `apt-get/yum/rpm` 等方式安装，可参考 [https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager]
 
 ## 基础
 
@@ -52,7 +52,7 @@ console.log('Hello World!\n');
 
 * Node.js 架构图
 
-![node.js constructure](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/nodejs_construct.jpg)
+![node.js constructure](http://ecma.bdimg.com/adtest/deaec564fcadc9e9f8b7f107dad1514c.png)
 
 Libeio 和 Libev 分别支持的是 Linux、Unix、Mac 等 POSIX 的异步式 I/O 和事件触发，IOCP 是 Windows 下的相关库，Libuv 对以上三者进行了一层封装。IOCP 是 Input/Output Completion Port，输入输出完成接口
 
@@ -86,7 +86,7 @@ Libeio 和 Libev 分别支持的是 Linux、Unix、Mac 等 POSIX 的异步式 I/
     * 基于JavaScript基础的服务端语言
     * 可以跳过Web服务器这一层直接面向前端开发
 
-![node.js vs php](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/nodejs_vs_php.jpg)
+![node.js vs php](http://ecma.bdimg.com/adtest/f9595b2ec28fb68c10cac2cba8c0b281.png)
 
 #### 事件循环
 
@@ -96,12 +96,11 @@ Node.js的高并发的原因之一是事件循环，什么是事件循环呢？[
 
 * 使用事件循环来处理I/O，而不是采用多线程，避免了线程切换的开销
 
-![event loop](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/event_loop.jpg)
+![event loop](http://ecma.bdimg.com/adtest/5bac09644d53ecff3ab900d87cd07c2d.png)
 
 事件循环的例子：请求index.html的过程
 
-![event loop 1](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/event_loop_1.png)
-![event loop 2](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/event_loop_2.png)
+![event loop example](http://ecma.bdimg.com/adtest/c9c258f41120027146b548895254d428.png)
 
 过程
 
@@ -138,8 +137,7 @@ mysql.query('SELECT * FROM ...', function(err, result) {
 
 * 同步I/O和异步I/O对比
 
-    ![sync io](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/io_sync.png)
-    ![async io](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/io_async.png)
+![sync io vs async io](http://ecma.bdimg.com/adtest/63022aa0761bc9430858da53a605c2c5.png)
 
 ### Node.js 的应用场景
 
@@ -625,7 +623,7 @@ app.use(function(req, res, next) {
 
 #### 路由
 
-路由是一个特殊的中间件，用于根据PATH和QUERY来转发请求到相应的 Controller (即routes/*)
+路由是一个特殊的中间件，用于根据 path 和 query 来转发请求到相应的 Controller (即routes/*)
 
 ```javascript
 // 创建router
@@ -654,11 +652,11 @@ app.use('/calendar', router);
 
     * router.get
     * router.post
-	* router.param
+    * router.param
 
 #### 模板引擎
 
-Express 的 View 层使用模板引擎来实现的，Express 默认支持 ejs/jade/hogan.js
+Express 的 View 层使用模板引擎来实现的，Express 默认支持 `ejs/jade/hogan.js`
 如果想要使用其他模板引擎，需要对其进行适配，好在模块 consolidate 已经对常用的模板引擎都做了适配，使用起来很方便
 
 ```javascript
@@ -711,13 +709,11 @@ connection.query('SELECT * FROM ...', function(err, rows, fields) {
 
     包 = 模块集合 + 包的Meta Data(package.json)
 
-* 包的作用
-
-独立功能封装起来，用于发布、更新、依赖管理和版本控制
+包的作用：独立功能封装起来，用于发布、更新、依赖管理和版本控制
 
 #### 创建包
 
-用npm init创建package.json
+用 `npm init` 创建package.json
 
 ```javascript
 {
@@ -757,18 +753,18 @@ connection.query('SELECT * FROM ...', function(err, rows, fields) {
 
 * 发布包
 
-    npm adduser
-    npm whoami
-    npm publish
+    * npm adduser
+    * npm whoami
+    * npm publish
 
 * 更新包
 
-    修改版本号
-    npm publish
+    * 修改版本号
+    * npm publish
 
 * 取消发布
 
-    npm unpublish
+    * npm unpublish
 
 #### Semantic Versioning
 
@@ -794,9 +790,9 @@ range1 || range2  // 或
 
 Node.js 是基于事件回调的，那么经常出现的一个情况是多个回调会多层嵌套，导致代码不易维护、不好阅读。
 
-* 解决办法：async、Promise/Deferred(代表模块：Q)等
+解决办法：`async`、`Promise/Deferred`(代表模块：`Q`)等
 
-* 举例：async.parallel
+举例：
 
 ```javascript
 // async 的使用示例：
@@ -811,35 +807,35 @@ async.parallel(
 // Q 的使用示例
 function getData1() {
     var deferred = Q.defer();
-	senRequest(function(data) {
-		if (data.success) {
-			deferred.resolve(data);
-		}
-		else {
-			deferred.reject('获取数据失败');
-		}
-	});
+    senRequest(function(data) {
+        if (data.success) {
+            deferred.resolve(data);
+        }
+        else {
+            deferred.reject('获取数据失败');
+        }
+    });
     return deferred.promise;
 };
 
 function getData2() {
-	// similar to getData1
+    // similar to getData1
 }
 
 getData1()
-	.then(function(data) {
-	    // getData1返回的数据
-		console.log(data);
+    .then(function(data) {
+        // getData1返回的数据
+        console.log(data);
 
-		return getData2();
-	})
-	.then(function(data) {
-	    // getData2返回的数据
-		console.log(data);
-	})
-	.fail(function(err) {
-		console.log(err);
-	})
+        return getData2();
+    })
+    .then(function(data) {
+        // getData2返回的数据
+        console.log(data);
+    })
+    .fail(function(err) {
+        console.log(err);
+    })
 ```
 
 ### 平常我们可以用Node.js做什么
