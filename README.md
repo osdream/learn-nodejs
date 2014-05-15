@@ -792,7 +792,9 @@ connection.query('SELECT * FROM ...', function(err, rows, fields) {
 range1 || range2  // 或
 ```
 
-### 不足：回调陷阱
+***
+
+## 不足：回调陷阱
 
 Node.js 是基于事件回调的，那么经常出现的一个情况是多个回调会多层嵌套，导致代码不易维护、不好阅读。
 
@@ -843,6 +845,10 @@ getData1()
         console.log(err);
     })
 ```
+
+***
+
+## 总结
 
 ### 平常我们可以用Node.js做什么
 
