@@ -153,6 +153,8 @@ mysql.query('SELECT * FROM ...', function(err, result) {
 
 * 计算密集型程序
 
+　　
+　　
 ***
 
 ## 实践
@@ -435,6 +437,8 @@ Node.js提供了不少常用的模块，这些模块可以称为内部模块或�
 
 ![package count](http://ecma.bdimg.com/adcoup-mat/songao/nodejs/img/package_count.png)
 
+　　
+　　
 ***
 
 ## Node.js调试方法
@@ -515,6 +519,8 @@ supervisor web.js
 
 * Eclipse插件
 
+　　
+　　
 ***
 
 ## 开发网站
@@ -792,6 +798,8 @@ connection.query('SELECT * FROM ...', function(err, rows, fields) {
 range1 || range2  // 或
 ```
 
+　　
+　　
 ***
 
 ## 不足：回调陷阱
@@ -846,6 +854,8 @@ getData1()
     })
 ```
 
+　　
+　　
 ***
 
 ## 总结
